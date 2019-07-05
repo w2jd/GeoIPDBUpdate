@@ -10,9 +10,7 @@ REM 22 Aug 2018, Jasper Bongertz, jasper@packet-foo.com
 REM 
 REM See also https://blog.packet-foo.com/2018/05/wireshark-geoip-resolution-setup-v2-0/
 
-cd /D %userprofile%\AppData\Roaming\Wireshark
-if not exist GeoIP (mkdir GeoIP)
-cd GeoIP
+cd /D [Wireshark GeoIP Folder]
 if not exist Temp (mkdir Temp)
 cd Temp
 
@@ -28,3 +26,6 @@ echo Unpacking archives
 
 echo Moving database files
 move *.mmdb ..\
+
+cd ..
+rmdir /S /Q Temp
